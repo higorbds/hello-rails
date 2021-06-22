@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
     <title>Blog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -8,9 +8,15 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+      .meu-link:hover {
+        color: hsl(0, 0%, 21%);
+      }
+    </style>
   </head>
 
   <body>
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
