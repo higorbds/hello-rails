@@ -1,15 +1,25 @@
-<h1>Articles</h1>
+<%= render 'layouts/navbar', data: { active: 'home' } %>
 
-Our blog has <%= Article.public_count %> articles and cunting!
 
-<ul>
-    <% @articles.each do |article| %>
-      <% if article.archived? == false %>
-        <li>
-          <%= link_to article.title, article %>
-        </li>
-      <% end %>
-    <% end %>
-</ul>
+<section class="container">
 
-<%= link_to "New Article", new_article_path %> 
+  <h1 class="title mb-0">Articles: </h1>
+    <section class="is-flex is-flex-wrap-wrap p-4">
+        <% @articles.each do |article| %>
+          <% if article.archived? == false %>
+            
+              <article class=" pl-0 pr-0 pt-0 mb-5 ml-5 card is-3 has-background-grey" style="width: 300px; min-height: 200px;">
+                <a href="/articles/<%= article.id %>">
+                  <div class="card-header mt-0 has-background-dark">
+                      <h1 class="card-header-title has-text-white"> <%= article.title %> </h1>
+                  </div>
+                  <div class="card-content p-4">
+                    <p class="has-text-white-bis"> <%= article.desc %> </p>
+                  </div>
+                </a>
+              </article>
+            
+          <% end %>
+        <% end %>
+    </section>
+</section>
