@@ -1,0 +1,20 @@
+<nav class="container navbar is-size-5 mt-2">
+  <div class="navbar-start">
+    <h1 class="title">BLOG</h1>
+  </div>
+  
+  <div class="navbar-end navbar-menu">
+    
+    <% if data[:active] == "home" %>
+      <%= link_to "Home", root_path, class: "navbar-item is-active" %> 
+    <% else %>
+      <%= link_to "Home", root_path, class: "navbar-item" %> 
+    <% end %>
+
+    <% if data[:active] == "new-article" %>
+      <%= link_to "New Article", new_article_path, class: "navbar-item is-active" %> 
+    <% else %>
+      <%= link_to "New Article", new_article_path, class: "navbar-item" %> 
+    <% end %>
+  </div>
+</nav>
