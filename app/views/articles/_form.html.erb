@@ -1,8 +1,8 @@
-<%= form_with model: article do |form|  %>
+<%= form_with model: article, class: "form container" do |form|  %>
 
-  <div>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="field">
+    <%= form.label :title, class: "label" %>
+    <%= form.text_field :title, class: "input" %>
 
     <% article.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
@@ -10,22 +10,32 @@
   </div>
 
   <div>
-    <%= form.label :body %>
-    <%= form.text_field :body %>
+    <%= form.label :desc, class: "label"  %>
+    <%= form.text_field :desc, class: "input" %>
+
+    <% article.errors.full_messages_for(:desc).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :body, class: "label"  %>
+    <%= form.text_area :body, class: "textarea" %>
 
     <% article.errors.full_messages_for(:body).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
-  <div>
-    <%= form.label :status %>
-    <%= form.select :status, ['public', 'private', 'archived'], 
-    selected: 'public' %>
+  <div class="control">
+      <div class="select is-multiple mb-6 ">
+        <%= form.label :status, class: "label"  %>
+        <%= form.select :status, ['public', 'private', 'archived'] %>
+      </div>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "button is-success" %>
   </div>
 
 <% end %>
