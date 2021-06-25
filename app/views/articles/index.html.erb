@@ -5,13 +5,13 @@
         <% @articles.each do |article| %>
           <% if article.archived? == false %>
             
-              <article class=" pl-0 pr-0 pt-0 mb-5 ml-5 card is-3 has-background-grey" style="width: 300px; min-height: 200px;">
+              <article class=" pl-0 pr-0 pt-0 mb-5 ml-5 card is-3 has-background-white-ter" style="width: 300px; min-height: 200px;">
                 <a href="/articles/<%= article.id %>">
-                  <div class="card-header mt-0 has-background-dark">
+                  <div class="card-header mt-0 has-background-link-dark">
                       <h1 class="card-header-title has-text-white"> <%= article.title %> </h1>
                   </div>
                   <div class="card-content p-4">
-                    <p class="has-text-white-bis"> <%= article.desc %> </p>
+                    <p class="has-text-grey-dark"> <%= article.desc %> </p>
                   </div>
                 </a>
               </article>
