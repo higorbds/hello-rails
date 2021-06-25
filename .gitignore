@@ -7,6 +7,10 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore personal modifications
+/.vscode
+.tool-versions
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
