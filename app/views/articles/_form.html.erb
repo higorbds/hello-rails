@@ -4,27 +4,40 @@
     <%= form.label :title, class: "label" %>
     <%= form.text_field :title, class: "input" %>
 
-    <% article.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+        <% article.errors.full_messages_for(:title).each do |message| %>
+          <article class="message is-danger">
+            <div class="message-body">
+              <%= message %>
+            </div>
+          </article>
+        <% end %>
   </div>
 
   <div>
     <%= form.label :desc, class: "label"  %>
     <%= form.text_field :desc, class: "input" %>
 
-    <% article.errors.full_messages_for(:desc).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+        <% article.errors.full_messages_for(:desc).each do |message| %>
+          <article class="message is-danger">
+            <div class="message-body">
+              <%= message %>
+            </div>
+          </article>
+        <% end %>
+    
   </div>
 
-  <div>
+  
     <%= form.label :body, class: "label"  %>
     <%= form.text_area :body, class: "textarea" %>
 
-    <% article.errors.full_messages_for(:body).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+        <% article.errors.full_messages_for(:body).each do |message| %>
+          <article class="message is-danger">
+            <div class="message-body">
+              <%= message %>
+            </div>
+          </article>
+        <% end %>
   </div>
 
   <div class="control">
