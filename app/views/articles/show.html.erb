@@ -1,26 +1,30 @@
-<h1><%= @article.title %></h1>
-
-<p>
-  <%= @article.body %>
-</p>
-
-<ul>
-  <li><%= link_to "Edit", edit_article_path(@article) %></li>
-  <li><%= link_to "Voltar", articles_path %></li> 
-  <li>
-    <%= 
-        link_to "Delete", 
-        article_path(@article), 
-        method: :delete, 
-        data: { confirm: 'Are you sure?' } 
-    %> 
-
-  </li>  
-</ul>
-
-<h2>Comments</h2>w
-<%= render @article.comments %>
-
-
-<h3>Add a comment: </h3>
-<%= render 'comments/form' %>
+<section class="container">
+    <h1 class="title"><%= @article.title %></h1>
+    <p class="subtitle ml-6 has-text-grey-light">|--> <%= @article.desc %></p>
+  </div>
+  
+  <p class="is-size-5">
+    <%= @article.body %>
+  </p>
+  
+  <div class="tabs is-centered mt-6">
+    <ul>
+      <li><%= link_to "Edit", edit_article_path(@article), class: "button is-warning" %></li>
+      <li><%= link_to "Voltar", articles_path, class: "button is-link ml-4" %></li>
+      <li>
+        <%=
+            link_to "Delete",
+            article_path(@article),
+            method: :delete,
+            data: { confirm: 'Are you sure?' },
+            class: "button is-danger ml-4"
+        %>
+    
+      </li>
+    </ul>
+  </div>
+  <h2 class="title is-size-4">Comments</h2>
+  <%= render @article.comments %>
+  <h3 class="title is-size-6">Add a comment: </h3>
+  <%= render 'comments/form' %>
+</section>

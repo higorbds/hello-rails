@@ -1,19 +1,18 @@
-<%= form_with model: [@article, @article.comments.build ] do |form| %>
-  <p>
+<%= form_with model: [@article, @article.comments.build ], class: "form container" do |form| %>
+  <p class="field">
     <%= form.label :commenter %>
     <%= form.text_field :commenter %>
   </p>
-  <p>
+  <p class="field">
     <%= form.label :body %>
     <%= form.text_field :body %>
   </p>
-  <div>
-  
+  <div class="field">
     <%= form.label :status %>
     <%= form.select :status, ['public', 'private', 'archived'], 
     selected: 'public' %>
   </div>
   <p>
-    <%= form.submit %>
+    <%= form.submit class: "button is-success" %>
   </p>
 <% end %>
